@@ -83,4 +83,18 @@ class ShoppingListTest extends TestCase
                      'message' => 'All Products from ShoppingList deleted Succesfully'
                  ]);
     }
+
+    public function test_CheckIfCanGetAnErrorWhenTryingToCreateAProductThatAlreadyExists() {
+        $this->seed(DatabaseSeeder::class);
+
+        $response = $this->postJson(route('shoppingListStore'), [
+            'name' => 'Milk',
+            'price' => 2.50
+        ]);
+
+        $response->assertStatus(409)
+                 ->assertJson([
+                     'message' => 'Product already exists'
+                 ]);
+    }
 }
