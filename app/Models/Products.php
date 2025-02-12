@@ -13,5 +13,10 @@ class Products extends Model
         'name',
         'price'
     ];
-    
+
+    public function shoppingList()
+    {
+        return $this->belongsTo(ShoppingList::class);
+    }
+
 }

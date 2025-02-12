@@ -12,4 +12,9 @@ class ShoppingList extends Model
     protected $fillable = [
         'owner'
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Products::class);
+    }
 }
