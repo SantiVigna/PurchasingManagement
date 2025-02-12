@@ -10,3 +10,4 @@ Route::post('/shoppinglists', [ShoppingListController::class, 'store'])->name('s
 Route::get('/shoppinglists/{id}', [ShoppingListController::class, 'show'])->name('shoppingListShow');
 Route::delete('/shoppinglists/{id}', [ShoppingListController::class, 'destroy'])->name('shoppingListDestroy');    
 Route::put('/shoppinglists/{id}', [ShoppingListController::class, 'update'])->name('shoppingListUpdate'); 
+Route::delete('/delete', [ShoppingListController::class, 'deleteShoppingList'])->name('shoppingListDeleteAll');
