@@ -10,11 +10,8 @@ class ShoppingList extends Model
     use HasFactory;
 
     protected $fillable = [
-        'owner'
+        'name',
+        'price'
     ];
 
-    public function products()
-    {
-        return $this->hasMany(Products::class);
-    }
 }

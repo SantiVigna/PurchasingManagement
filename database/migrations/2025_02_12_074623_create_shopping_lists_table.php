@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('shopping_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('owner');
+            $table->string('name');
+            $table->float('price');
             $table->timestamps();
         });
     }
