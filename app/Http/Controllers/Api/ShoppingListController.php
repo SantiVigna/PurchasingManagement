@@ -20,6 +20,10 @@ class ShoppingListController extends Controller
             'name' => 'required|string',
             'price' => 'required|between:0,99.99'
         ]);
+        
+        if ($this->existencyOfProducts($validated['name'])) {
+            return response()->json(['message' => 'Product already exists'], 409);
+        }
 
         $shoppinglist = ShoppingList::create([
             'name' => $validated['name'],
@@ -28,6 +32,12 @@ class ShoppingListController extends Controller
         
         $shoppinglist->save();
         return response()->json($shoppinglist, 201);
+    }
+
+    public function existencyOfProducts($name)
+    {
+        $existingproduct = ShoppingList::where('name', $name)->first();
+        return $existingproduct;
     }
 
     public function show(string $id)
