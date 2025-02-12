@@ -15,20 +15,53 @@ class ShoppingListSeeder extends Seeder
     {
         $shoppinglists = [
             [
-                'owner' => 'Santino',
+                'name' => 'Milk',
+                'price' => 2.50
             ],
             [
-                'owner' => 'Tiziano',
+                'name' => 'Bread',
+                'price' => 1.50
             ],
             [
-                'owner' => 'Gaston',
+                'name' => 'Eggs',
+                'price' => 3.00
             ],
             [
-                'owner' => 'Mariana',
+                'name' => 'Butter',
+                'price' => 2.00
             ],
             [
-                'owner' => 'Luca',
+                'name' => 'Cheese',
+                'price' => 4.00
             ],
+            [
+                'name' => 'Yogurt',
+                'price' => 1.00
+            ],
+            [
+                'name' => 'Apples',
+                'price' => 2.00
+            ],
+            [
+                'name' => 'Bananas',
+                'price' => 1.50
+            ],
+            [
+                'name' => 'Oranges',
+                'price' => 2.00
+            ],
+            [
+                'name' => 'Grapes',
+                'price' => 3.00
+            ],
+            [
+                'name' => 'Meat',
+                'price' => 14.95
+            ],
+            [
+                'name' => 'Chicken',
+                'price' => 9.43
+            ]
         ];
 
         foreach ($shoppinglists as $shoppinglist) {
