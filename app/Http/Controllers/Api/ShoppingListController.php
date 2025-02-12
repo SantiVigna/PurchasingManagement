@@ -61,5 +61,13 @@ class ShoppingListController extends Controller
     {
         $shoppinglist = ShoppingList::findOrFail($id);
         $shoppinglist->delete();
+        return response()->json(["message" => "Product from ShoppingList deleted Succesfully"], 200);
+    }
+
+    public function deleteShoppingList()
+    {
+        $shoppinglist = ShoppingList::all();
+        $shoppinglist->each->delete();
+        return response()->json(["message" => "All Products from ShoppingList deleted Succesfully"], 200);
     }
 }
