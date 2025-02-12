@@ -1,66 +1,194 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 Welcome to PurchasingManagement 🛒
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project aims to develop an API platform where you can make your own ShopList
 
-## About Laravel
+to manage everything you need to buy when you go to the Supermarket
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
+## 🛠️🚀 Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### **Languages**:
+- HTML
+- Blade (Laravel template engine)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### **Frameworks**:
+- Laravel
 
-## Learning Laravel
+### **Server**:
+- XAMPP
+- Apache
+- Node.js
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### **Database**:
+- MySQL
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### **Tools & Others**:
+- Composer
+- Postman
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📊📁 DB Diagram
+Below is a diagram of the database:
 
-## Laravel Sponsors
+- **ShoppingList Table:** Table that registers all the products you have to buy.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+![image](https://github.com/user-attachments/assets/81060c3c-fa46-44ca-9865-453aa138991c)
 
-### Premium Partners
+## 🔧⚙️ Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Follow these steps to install and set up the project:
 
-## Contributing
+- Clone the repository
+```
+https://github.com/SantiVigna/PurchasingManagement.git
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Install Composer dependencies
 
-## Code of Conduct
+```
+composer install
+```
+- Install Node.js dependencies
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+npm install
+```
+- Duplicate .env.example file and rename to .env
+- In this new .env, change the variables you need, but it is very important to uncomment the database connection lines that are these:
+ 
+In DB_CONNECTION will come mysqlite, change it to the db you use (in this case MySQL)
 
-## Security Vulnerabilities
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=PurchasingManagement
+DB_USERNAME=root
+DB_PASSWORD=
+```
+ - Generate an App Key with this command 
+```
+php artisan key:generate 
+```
+- Create the KataDni DB in your SQL Database program, if you dont do this the app wont work
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Execute migrations  
+```
+php artisan migrate
+```
 
-## License
+## ▶️💻 Run Locally
+- How to run the Laravel server  
+```
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🏃‍♂️🧪 Running Tests
+
+To run test you should uncomment the following lines on the phpunit.xml file.
+
+![image](https://res.cloudinary.com/dierpqujk/image/upload/v1733829455/imagen_2024-12-10_121742908_b3mfqm.png)
+
+
+With the following command we run the tests and we will also generate a coverage report, the first one in the terminal, and the second one a html coverage report
+
+```bash
+  php artisan test --coverage
+```
+
+```bash
+  php artisan test --coverage-html=coverage-report
+```
+
+If everything is configured correctly, tests should pass, and the coverage report will show `100%` coverage approximately.
+
+#### Test Summary:
+![image](https://github.com/user-attachments/assets/9e0ea300-43c8-49c3-998d-86c20dde7abc)
+
+![image](https://github.com/user-attachments/assets/e9fb1d86-d59d-495c-addd-20f7c9ea8db3)
+
+
+## 📡🌐 PurchasingManagement API
+
+This API allows you to manage the list of products you have to buy
+
+#### Get all the products
+
+```http
+GET /api/shoppinglists
+```
+
+#### Response:
+- **Status Code:** 200
+- **Content Type:** application/json
+
+#### Get one product
+
+```http
+GET /api/shoppinglists/ID
+```
+
+#### Response:
+- **Status Code:** 200
+- **Content Type:** application/json
+
+#### Create a new Product
+
+```http
+POST /api/shoppinglists
+```
+
+#### Response:
+- **Status Code:** 201/409
+- **Content Type:** application/json
+
+#### Body: 
+
+| Parameter | Type     | Description                    |
+| :-------- | :------- | :-------------------------     |
+| `name` | `string` | **Required**. Name of the Product |
+| `price` | `float` | **Required**. Price of the Product |
+
+#### Edit an specific Product
+
+```http
+PUT /api/shoppinglists/ID
+```
+
+#### Response:
+- **Status Code:** 200
+- **Content Type:** application/json
+
+
+#### Body: 
+
+| Parameter | Type     | Description                    |
+| :-------- | :------- | :-------------------------     |
+| `name` | `string` | Name of the Product |
+| `price` | `float` | Price of the Product |
+
+#### Delete one product
+
+```http
+DELETE /api/shoppinglists/ID
+```
+
+#### Response:
+- **Status Code:** 200
+- **Content Type:** application/json
+
+- #### Delete all the products from the list
+
+```http
+DELETE /api/delete
+```
+
+#### Response:
+- **Status Code:** 200
+- **Content Type:** application/json
+
+## ✍️🙍 Author
+
+- **Santino Vigna:**
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?style=flat-square&logo=github)](https://github.com/SantiVigna)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?style=flat-square&logo=linkedin)](www.linkedin.com/in/miguel-garcía-lópez-609136284)
+[![Correo](https://img.shields.io/badge/Email-Contacto-red?style=flat-square&logo=gmail)](mailto:ynotvigna@gmail.com)
