@@ -17,11 +17,13 @@ class ShoppingListController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'owner' => 'required|string'
+            'name' => 'required|string',
+            'price' => 'required|between:0,99.99'
         ]);
 
         $shoppinglist = ShoppingList::create([
-            'owner' => $validated['owner']
+            'name' => $validated['name'],
+            'price' => $validated['price']
         ]);
         
         $shoppinglist->save();
@@ -39,11 +41,13 @@ class ShoppingListController extends Controller
         $shoppinglist = ShoppingList::findOrFail($id);
         
         $validated = $request->validate([
-            'owner' => 'required|string'
+            'name' => 'string',
+            'price' => 'between:0,99.99',
         ]);
 
         $shoppinglist->update([
-            'owner' => $validated['owner']
+            'name' => $validated['name'],
+            'price' => $validated['price']
         ]);
 
         $shoppinglist->save();
