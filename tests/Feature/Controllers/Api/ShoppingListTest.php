@@ -72,4 +72,15 @@ class ShoppingListTest extends TestCase
                      'message' => 'Product from ShoppingList deleted Succesfully'
                  ]);
     }
+
+    public function test_CheckIfCanDeleteAllTheProductsFromTheShoppingList() {
+        $this->seed(DatabaseSeeder::class);
+
+        $response = $this->deleteJson(route('shoppingListDeleteAll'));
+
+        $response->assertStatus(200)
+                 ->assertJson([
+                     'message' => 'All Products from ShoppingList deleted Succesfully'
+                 ]);
+    }
 }
